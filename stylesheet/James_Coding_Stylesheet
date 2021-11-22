@@ -15,6 +15,10 @@ NON_RETURN_FUNCTION_NAME (AKA METHOD):
 		function MY_FUNCTION_IS_COOL()
 		end
 
+DEFAULT_FUNCTIONS:
+	Code inside should be neat and organised
+	Seperate Sections just like with commenting but with empty lines rather than comments
+
 DEFAULT_VARIABLE_NAME:
 	Lowercase first letter
 	End with semi-colon
@@ -28,65 +32,6 @@ NON_CHANGING_VARIABLE_NAME:
 	
 	Example:
 		MY_COOL_VARIABLE = 5;
-
-COMMENTING:
-	Each section of code should be commented in a set format
-	
-	Python Example:
-		######
-		## MODULE IMPORTS
-		######
-		
-		######
-		## VARIABLE ASSIGNS
-		######
-		
-		######
-		## FUNCTIONS
-		######
-		
-		######
-		## CLASSES
-		######
-		
-		######
-		##	CODE
-		######
-	
-	Lua Example:
-		--[[
-		######
-		## MODULE IMPORTS
-		######
-		]]--
-		
-		
-		--[[
-		######
-		## VARIABLE ASSIGNS
-		######
-		]]--
-		
-		
-		--[[
-		######
-		## FUNCTIONS
-		######
-		]]--
-		
-		
-		--[[
-		######
-		## CLASSES
-		######
-		]]--
-		
-		
-		--[[
-		######
-		##	CODE
-		######
-		]]--
 
 FOR LOOPING:
 	Iterable Variables should have appropriate names
@@ -146,10 +91,73 @@ WHILE LOOPING:
 			print("TICK")
 			wait()
 		end
+
+CLASSES:
+	If a class doesn't inherit from another class you should use the keyword without parenthisis
+	Example:
+		class myClass:
+			pass
+	
+	Class Names should be simmilar to a default variable name, first letter of first word lowercase, all other first letters uppercare
+	
+	For class methods that are not supposed to be used outside the class, start their names with a single or double underscore
+	Example:
+		class myClass:
+			def __do_something(self):
+				pass
+	
+	For the above methods, make all letters lowercase and seperated words by underscore
+	Otherwise, for other methods, follow standard function naming procedured
+	
+	Standard ordering should be, built-in methods such as __init__, __str__, etc should be first, followed by custom non-external use methods, followed by custom methods.
+	Example:
+		class myClass:
+			def __init__(self):
+				pass
+				
+			def __str__(self):
+				pass
+			
+			def __do_something(self):
+				pass
+				
+			def myMethod(self):
+				pass
 		
-DEFAULT_FUNCTIONS:
-	Code inside should be neat and organised
-	Seperate Sections just like with commenting but with empty lines rather than comments
+COMMENTING:
+	Each section of code should be commented in a set format
+	
+	Python Example:
+		######
+		## VARIABLE ASSIGNS
+		######
+		
+		######
+		## FUNCTIONS
+		######
+		
+		######
+		##	CODE
+		######
+	
+	Lua Example:
+		--[[
+		######
+		## VARIABLE ASSIGNS
+		######
+		]]--
+		
+		--[[
+		######
+		## FUNCTIONS
+		######
+		]]--
+		
+		--[[
+		######
+		##	CODE
+		######
+		]]--
 		
 GOOD LUA CODE:		
 --[[
