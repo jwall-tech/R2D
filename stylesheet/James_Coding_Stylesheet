@@ -1,0 +1,219 @@
+DEFAULT_FUNCTION_NAME:
+	Lowercase First Words First Letter
+	Uppercase Other Words FIrst Letters
+	Lowercase non-first-word letters
+	
+	Example:
+		function myFunctionIsCool()
+		end
+
+NON_RETURN_FUNCTION_NAME (AKA METHOD):
+	Uppercase all letters
+	Underscore to seperate words
+	
+	Example:
+		function MY_FUNCTION_IS_COOL()
+		end
+
+DEFAULT_VARIABLE_NAME:
+	Lowercase first letter
+	End with semi-colon
+	
+	Example:
+		myCoolVariable = 5;
+
+NON_CHANGING_VARIABLE_NAME:
+	Uppercase All letters
+	Underscore to seperate words
+	
+	Example:
+		MY_COOL_VARIABLE = 5;
+
+COMMENTING:
+	Each section of code should be commented in a set format
+	
+	Python Example:
+		######
+		## MODULE IMPORTS
+		######
+		
+		######
+		## VARIABLE ASSIGNS
+		######
+		
+		######
+		## FUNCTIONS
+		######
+		
+		######
+		## CLASSES
+		######
+		
+		######
+		##	CODE
+		######
+	
+	Lua Example:
+		--[[
+		######
+		## MODULE IMPORTS
+		######
+		]]--
+		
+		
+		--[[
+		######
+		## VARIABLE ASSIGNS
+		######
+		]]--
+		
+		
+		--[[
+		######
+		## FUNCTIONS
+		######
+		]]--
+		
+		
+		--[[
+		######
+		## CLASSES
+		######
+		]]--
+		
+		
+		--[[
+		######
+		##	CODE
+		######
+		]]--
+
+FOR LOOPING:
+	Iterable Variables should have appropriate names
+	Use _ if unneeded variable
+	Use i,x,y,z if needed but only very temporary
+	
+	For Loops must be seperated by at least 1 blank line if directly after one another
+	
+	Python Example:
+		for i in range(100):
+			print(i)
+		
+		for UserName in ["jdawg1","bggg","bdawgs2"]:
+			print(UserName)
+	
+	Lua Example:
+		for i = 1,100 do
+			print(i)
+		end
+		
+		for _,UserName in ipairs({"jdawg1","bggg","bdawgs2}) do
+			print(UserName)
+		end
+	
+WHILE LOOPING:
+	While loops must be checked to make sure they do not exceed memory limits
+	Use while True if endless loop is needed
+	Ensure there is actions inside, an empty while True statement will crash
+	In lua ensure you have an empty wait at the start or end of the loop
+	Follow simmilar rules to the for looping style
+	
+	Conditional Variable must be appropriately named
+	
+	Python Example:
+		on = True
+		index = 0
+		while on:
+			index += 1
+			if index > 5:
+				on = False
+		
+		while True:
+			print("TICK")
+			# Example for something like a gameloop
+	
+	Lua Example:
+		local on = true
+		local index = 0
+		while on do
+			index = index + 1
+			if index > 5 then
+				on = false
+			end
+		end
+		
+		while true do
+			print("TICK")
+			wait()
+		end
+		
+DEFAULT_FUNCTIONS:
+	Code inside should be neat and organised
+	Seperate Sections just like with commenting but with empty lines rather than comments
+		
+GOOD LUA CODE:		
+--[[
+######
+## VARIABLE ASSIGNS
+######
+]]--
+local searchList = {
+	"ABC",123,"CBA",321,"Skyrim","One Hundred",100,"Two Thousand And Six",2006
+}
+
+local targetTerms = {"Skyrim","One Hundred"}
+	
+--[[
+######
+## FUNCTIONS
+######
+]]--
+function linearSearch(listToSearch,targetTerm)
+	for _,item in pairs(listToSearch) do
+		if item == targetTerm then
+			return true
+		end
+	end
+	return false
+end
+
+--[[
+######
+##	CODE
+######
+]]--
+
+for _,targetTerm in pairs(targetTerms) do
+	print(linearSearch(searchList,targetTerm))
+end
+
+GOOD PYTHON CODE:
+
+######
+## VARIABLE ASSIGNS
+######
+
+searchList = ["ABC",123,"CBA",321,"Skyrim","One Hundred",100,"Two Thousand And Six",2006]
+
+targetTerms = ["Skyrim","One Hundred","hi"]
+	
+
+######
+## FUNCTIONS
+######
+
+def linearSearch(listToSearch,targetTerm):
+	for item in listToSearch:
+		if item == targetTerm:
+			return True
+	return False
+
+
+
+######
+##	CODE
+######
+
+for targetTerm in targetTerms:
+	print(linearSearch(searchList,targetTerm))
+
